@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans:wght@400;700;800&family=Roboto&family=Sigmar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5% auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5rem;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.25);
+}
+
+.index-h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.reg-h2 {
+    background: radial-gradient(circle, rgba(11,119,152, 1) 40%, rgba(24,67,105, 1)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.log-in-h2 {
+    background: radial-gradient(circle, rgb(155, 160, 63) 0%, rgb(69, 182, 73) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input{
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1.5px solid black;
+    border-radius: 15px;
+    margin-bottom: 1.25rem;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+
+.register-button {
+    background: linear-gradient(to right, rgba(24,67,105, 0.8)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+}
+
+.login-button {
+    background: linear-gradient(to right, rgba(69, 182, 73, 0.75)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+}
+
+button:hover{
+    color: white;
+    background-position: left bottom;
+    cursor: pointer;
+    transition: 0.75s ease-out;
+}

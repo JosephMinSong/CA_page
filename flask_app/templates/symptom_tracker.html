@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_symptom_tracker.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Symptom Tracker</h1>
+    </nav>
+
+    <div class="table-header">
+        <h2>Here are all your logged symptoms: </h2>
+    </div>
+    <main>
+        <table>
+            <thead>
+                <th>Date</th>
+                <th>Symptom</th>
+                <th>Severity</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                {% if user_symptoms %}
+                    {% for symptom in user_symptoms %}
+                    <tr>
+                        <td>{{ symptom.date }}</td>
+                        <td>{{ symptom.name }}</td>
+                        <td>{{ symptom.severity }}</td>
+                        <td>{{ symptom.description }}</td>
+                        <td> 
+                            <button onclick="location.href='/edit/{{ symptom.id }}'"> <i class="fa-solid fa-pen-to-square"></i> </button>  
+                            <button onclick="location.href='/delete/{{ symptom.id }}'"> <i class="fa-solid fa-trash"></i> </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </main>
+    <div class="btn-container">
+        <button class='add' onclick="location.href='/symptom_tracker/add'">Add symptom</button>
+        <button class='home' onclick="location.href='/'" class=>Home</button>
+    </div>
+
+    <script src="https://kit.fontawesome.com/9844049175.js" crossorigin="anonymous"></script>
+</body>
+</html>

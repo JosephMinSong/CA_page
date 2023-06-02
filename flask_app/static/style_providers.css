@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans:wght@400;700;800&family=Roboto&family=Sigmar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 5% auto;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 5% 0%;
+    z-index: 0;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.first-form {
+    position: relative;
+    left: 50vh;
+    text-align: center;
+}
+
+.second-form {
+    position: relative;
+    right: -2000px;
+    text-align: center;
+}
+
+.slidetoleft {
+    left: -2000px;
+    transition: 2s;
+}
+
+.slidefromright {
+    right: 35vh;
+    transition: 2s;
+}
+
+.provider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.25);
+    padding: 3rem;
+    gap: 1rem;
+}
+
+.provider-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.provider-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.index-h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 2rem 0rem 1.5rem 2rem;
+}
+
+select, input {
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    border-radius: 1rem;
+}
+
+select:hover, input:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.reg-h2 {
+    background: radial-gradient(circle, rgba(11,119,152, 1) 40%, rgba(24,67,105, 1)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.log-in-h2 {
+    background: radial-gradient(circle, rgb(155, 160, 63) 0%, rgb(69, 182, 73) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+
+.register-btn, .next-btn {
+    background: linear-gradient(to right, rgba(24,67,105, 0.8)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+}
+
+.home-btn {
+    background: linear-gradient(to right, rgba(24,67,105, 0.8)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+    margin-left: 8rem;
+}
+
+button:hover{
+    color: white;
+    background-position: left bottom;
+    cursor: pointer;
+    transition: 0.75s ease-out;
+}
+
+#splashscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 100%;
+    background: white;
+    font-family: 'Open Sans', sans-serif;
+    margin: 5% 0%;
+    gap: 2rem;
+    background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+    z-index: 1;
+}
+
+#splashscreen > h2, h1 {
+    font-size: 2.5rem;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+

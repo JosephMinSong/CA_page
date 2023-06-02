@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    margin: 5% 5%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: radial-gradient(circle, rgba(11,119,152, 1) 40%, rgba(24,67,105, 1)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    background: radial-gradient(circle, rgb(155, 160, 63) 0%, rgb(69, 182, 73) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 5%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+
+.add {
+    background: linear-gradient(to right, rgba(11,119,152, 1)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+}
+
+.home {
+    background: linear-gradient(to right, rgb(69, 182, 73)  50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.75s ease-out;
+}
+
+button:hover{
+    color: white;
+    background-position: left bottom;
+    cursor: pointer;
+    transition: 0.75s ease-out;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2%;
+}
+
+main {
+    margin-left: 5%;
+}
+
+table {
+    width: 70%;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    border: 2px solid black;
+}
+
+thead {
+    font-size: 2rem;
+}
+
+tbody {
+    border: 2px solid black;
+}
+
+th {
+    margin-bottom: 2rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table thead tr th{
+    border-bottom: 1px solid #000000;
+}
+
+table th, table td {
+    border-left: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+table th, table td{
+    padding: 1rem;
+}

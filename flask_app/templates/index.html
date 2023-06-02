@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{url_for('static', filename='style_index.css')}} ">
+    <title>Document</title>
+</head>
+<body>
+    {# Nav Bar #}
+    <nav class="nav-bar">
+        <div class="nav-bar-left">
+            <h3>Welcome</h3>
+        </div>
+        <div class="nav-bar-right">
+            {% if 'user_id' not in session %}
+            <button id="login-button" onclick="location.href='/users/signin_reg'">Sign Up/Log In</button>
+            {% else %}
+            <button id="login-button" onclick="location.href='/users/signout'">Sign Out</button>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% if 'user_id' in session %}
+    <div class="care-team">
+        <div class="care-team-header">
+            <h2>Your Care Team:</h2>
+        </div>
+        <div class="care-team-table">
+            <table>
+                <thead>
+                    <th>Attending Physician: </th>
+                    <th>Advanced Practice Provider: </th>
+                    <th>Nurse: </th>
+                </thead>
+                <tbody>
+                    <td> {{ logged_user.doctor.title }} {{ logged_user.doctor.first_name }} {{ logged_user.doctor.last_name }}</td>
+                    <td> {{ logged_user.app.title }} {{ logged_user.app.first_name }} {{ logged_user.app.last_name }} </td>
+                    <td> {{ logged_user.nurse.first_name }} {{ logged_user.nurse.last_name }} </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="parallax-1-seattle"></div>
+
+    {# Main Body #}
+    <div class="main-title-container">
+        <h2 id="main-title">How can we help you today?</h2>
+    </div>
+    <div class="flip-card-container-row row-1">
+        <a href="#" class="flip-card">
+            <div class="flip-card-content" id="living-with-cancer">
+                <h4>Living with Cancer</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quae odio consequatur! Ratione animi magnam nostrum placeat amet accusantium temporibus expedita dolores. Reprehenderit quis perferendis totam unde aliquid delectus dolorum?</p>
+            </div>
+        </a>
+        <a href="/symptom_tracker" class="flip-card">
+            <div class="flip-card-content" id="symptom-tracker">
+                <h4>Symptom Tracker</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis aperiam culpa enim, veniam blanditiis molestiae non, qui quaerat quidem placeat nemo ab voluptatem dolorum dolor ratione soluta suscipit, velit consectetur!</p>
+            </div>
+        </a>
+        <a href="/diet_guidelines" class="flip-card">
+            <div class="flip-card-content" id="diet-guidelines">
+                <h4>Diet Guidelines</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur reiciendis tempore vero, nesciunt nulla labore officiis natus possimus nisi autem ullam optio cumque veritatis iure fugiat temporibus at ad.</p>
+            </div>
+        </a>
+    </div>
+    <div class="flip-card-container-row row-2">
+        <a href="#" class="flip-card">
+            <div class="flip-card-content" id="infections">
+                <h4>Neutropenia / Infections</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut asperiores dignissimos id autem ex optio nemo rerum maiores odit consequuntur? Aliquid suscipit nemo saepe animi a enim hic veniam culpa!</p>
+            </div>
+        </a>
+        <a href="#" class="flip-card">
+            <div class="flip-card-content" id="line-management">
+                <h4>Port / Line Management</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iusto sunt quo totam impedit. Facilis modi dignissimos quas perferendis deserunt. Autem repellat aliquam necessitatibus tenetur quas dolorum qui tempore officiis.</p>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+</html>

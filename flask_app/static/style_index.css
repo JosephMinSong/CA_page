@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans:wght@400;700&family=Roboto&family=Sigmar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    /* outline: 1px solid red; */
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* ************************************* NAV-BAR ******************************************** */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5% 5%;
+}
+
+.nav-bar-left {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.75rem;
+    font-weight: bold;
+}
+
+.nav-bar-left > h3 {
+    background: radial-gradient(circle, rgba(11,119,152, 0.75) 40%, rgba(255,180,0, 0.75)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+.nav-bar-right > a {
+    color: black;
+}
+
+.nav-bar-right > a:hover, #login-button:hover {
+    opacity: 75%;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#login-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(to right, rgba(24,67,105, 0.75) 50%, rgba(10,121,154, 0.75) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 1.5s ease-out;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#login-button:hover {
+    background-position: left bottom;
+    color: white;
+    transition: 1s ease-out;
+    cursor: pointer;
+}
+
+
+/* **************************************** CARE TEAM DIV ************************************* */
+.care-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1% 0%;
+    gap: 5rem;
+    background: linear-gradient(to top right, rgba(37,179,196, 0.5), rgba(27,54,93, 0.5));
+    padding: 3% 5%;
+}
+
+.care-team-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    background: radial-gradient(circle, rgb(24,67,105) 0%, rgb(11,119,152) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+thead, tbody {
+    line-height: 3.75rem;
+    text-align: center;
+}
+
+th, td {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+}
+
+/* ************************************* MEDIA RESIZING ***************************************** */
+@media (max-width: 600px) {
+    .nav-bar-left, .nav-bar-right, #login-button {
+        font-size: 1rem;
+    }
+
+    .care-team {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .care-team-header {
+        font-size: 1.5rem;
+    }
+
+    thead,tbody {
+        line-height: 1.5rem;
+        text-align: center;
+    }
+
+    th, td {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #login-button{
+        font-size: 0.75rem;
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .care-team-header {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    thead,tbody {
+        line-height: 1.5rem;
+        text-align: center;
+    }
+
+    th, td {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+.parallax-1-seattle {
+    background-image: url('https://images.unsplash.com/photo-1589481169991-40ee02888551?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2VhdHRsZXxlbnwwfHwwfHw%3D&w=1000&q=80');
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2% 0%;
+}
+
+
+
+/* **************************************** MAIN BODY *********************************************** */
+.main-title-container{
+    display: flex;
+    justify-content: center;
+}
+
+#main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    margin-left: 6%;
+    background: radial-gradient(circle, rgb(24,67,105) 0%, rgb(11,119,152) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flip-card-container-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    padding: 5rem 0rem;
+    margin: 0% 5%;
+}
+
+.row-2 {
+    padding-top: 0 !important;
+}
+
+.row-2 > .flip-card {
+    flex: 1;
+}
+
+.flip-card {
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 0rem 5rem;
+    background: linear-gradient(to top, rgba(11,119,152, 0.5) 50%, rgba(128, 128, 128, 0.25) 50%);
+    background-size: 100% 200%;
+    transition: 1.5s;
+}
+
+.flip-card:hover {
+    background-color: rgba(24,67,105, 0.2);
+    background-position: 0% 25%;
+    transition: 1.5s;
+    cursor: pointer;
+}
+
+.flip-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flip-card-content > h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    background: radial-gradient(circle, rgb(24,67,105) 0%, rgb(11,119,152) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flip-card-content > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: black;
+}
+
+/* ************************************* MEDIA RESIZING ***************************************** */
+@media (max-width: 600px) {
+    .main-title-container{
+        align-items: center;
+        text-align: center;
+    }
+
+    #main-title{
+        font-size: 2.25rem;
+        margin: 0% auto;
+    }
+
+    .flip-card-container-row {
+        flex-direction: column;
+        padding: 1rem; 
+        margin: 0% 1%;
+    }
+
+    .flip-card {
+        margin: 1rem 1rem;
+    }
+
+    .flip-card-content > h4 {
+        font-size: 1rem;
+    }
+
+    .flip-card-content > p {
+        font-size: 0.75rem;
+    }
+
+    .row-2 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-title-container{
+        text-align: center;
+    }
+
+    #main-title{
+        margin: 0;
+    }
+
+    .flip-card-container-row{
+        flex-direction: column;
+        padding: 1rem 0rem;
+    }
+
+    .flip-card {
+        margin: 1rem 1rem;
+    }
+}

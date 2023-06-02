@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style_symptom_add.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Update a symptom</h1>
+    </nav>
+
+    <div class="first-form">
+        {% for message in get_flashed_messages(category_filter=['add_symptom']) %}
+            <p style="color:red"> {{message}} </p>
+        {% endfor %}
+        <form action="/user_symptoms/update" class="symptom-container">
+            <div class="symptom">
+                <h3><label for="date" name="date">Date: </label></h3>
+                <input type="date" name="date" id="date" value="{{ user_symptom.date }}">
+            </div>
+
+            <div class="symptom">
+                <h3><label for="symptom" name="symptom">Symptom: </label></h3>
+                {% for symptom in all_symptoms %}
+                    <option value="{{ symptom.id }}" {% if user_symptom.symptom_id == symptom.id %} selected {% endif %}>{{ symptom.name }}</option>
+                {% endfor %}
+            </div>
+
+            <div class="symptom">
+                <h3><label for="severity" name="severity">Severity: </label></h3>
+                <select name="severity" id="severity">
+                    <option value="1" {% if user_symptom.severity == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if user_symptom.severity == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if user_symptom.severity == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if user_symptom.severity == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if user_symptom.severity == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if user_symptom.severity == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if user_symptom.severity == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if user_symptom.severity == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if user_symptom.severity == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if user_symptom.severity == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+
+            <div class="symptom">
+                <h3><label for="description" name="description">Description: </label></h3>
+                <textarea name="description" id="description" cols="40" rows="10">{{ user_symptom.description }}</textarea>
+            </div>
+
+            <input type="hidden" name="id" value="{{ user_symptom.id }}">
+            <div class="btn">
+                <button class="submit-btn">Edit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

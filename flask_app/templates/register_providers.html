@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style_providers.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_providers.css')}}">
+    <title>Login and Registration</title>
+</head>
+<body>
+
+    <div id="splashscreen">
+        <h1>Welcome</h1>
+        <h2>We're glad you're here</h2>
+        <p>Press any key to continue</p>
+    </div>
+
+    <h2 class="index-h2 reg-h2">Tell us about you : </h2>
+    <div class="register">
+        <form action="/users/register/create" method="post">
+            <div class="form-container">
+                <div class="first-form">
+                    <div class="error-field-1">
+
+                    </div>
+                    <div class="provider-container">
+                        <div class="provider">
+                            <h3><label for="cancer_id" name="cancer_id">Your Cancer Diagnoses: </label></h3>
+                            <select name="cancer_id" id="cancer_id">
+                                {% for cancer in all_cancers %}
+                                <option value="{{ cancer.id }}">{{ cancer.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+            
+                        <div class="provider">
+                            <h3><label for="date_of_dx" name="date_of_dx">Date of Diagnoses: </label></h3>
+                            <input type="date" name="date_of_dx" id="date_of_dx">
+                        </div>
+                    </div>
+                    <div class="provider-btn">
+                        <button class="next-btn">Next</button>
+                    </div>
+                </div>
+                <div class="second-form">
+                    <div class="provider-container">
+                        <div class="provider">
+                            <h3><label for="doctor_id" name="doctor_id">Your Primary Doctor: </label></h3>
+                            <select name="doctor_id" id="doctor_id">
+                                {% for doctor in all_doctors %}
+                                <option value="{{ doctor.id }}">{{ doctor.title }}. {{ doctor.first_name }} {{ doctor.last_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+            
+                        <div class="provider">
+                            <h3><label for="advanced_providers_id" name="advanced_providers_id">Your Advanced Provider: </label></h3>
+                            <select name="advanced_providers_id" id="advanced_providers_id">
+                                {% for app in all_advanced_providers %}
+                                <option value="{{ app.id }}">{{ app.title }}. {{ app.first_name }} {{ app.last_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+            
+                        <div class="provider">
+                            <h3><label for="nurse_id" name="nurse_id">Your Primary Nurse: </label></h3>
+                            <select name="nurse_id" id="nurse_id">
+                            {% for nurse in all_nurses %}
+                                <option value="{{ nurse.id }}">{{ nurse.first_name }} {{ nurse.last_name }}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="provider-btn">
+                        <button class="register-btn">Submit</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        <button onclick="location.href='/'" class="home-btn">Go back to home page</button>
+    </div>
+    <script src=" {{url_for('static', filename='script_providers.js')}} "></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style_signin_reg.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_signin_reg.css')}}">
+    <title>Login and Registration</title>
+</head>
+<body>
+    <div class="register">
+        <form action="/users/register" method="post">
+
+            <h2 class="index-h2 reg-h2">Registration</h2>
+
+            {% for message in get_flashed_messages(category_filter=['first_name']) %}
+                <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="first_name" name="first_name">First name: </label></h3>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter your first name here...">
+
+            {% for message in get_flashed_messages(category_filter=['last_name']) %}
+                <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="last_name" name="last_name">Last name: </label></h3>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter your last name here...">
+            
+            {% for message in get_flashed_messages(category_filter=['email']) %}
+                <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="email" name="email">Email: </label></h3>
+            <input type="email" id="email" name="email" placeholder="Enter your email name here...">
+            
+            {% for message in get_flashed_messages(category_filter=['password']) %}
+                <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="password" name="password">Create a password </label></h3>
+            <input type="password" id="password" name="password">
+
+            {% for message in get_flashed_messages(category_filter=['confirm_password']) %}
+                <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="confirm_password" name="confirm_password">Confirm your password: </label></h3>
+            <input type="password" id="confirm_password" name="confirm_password">
+
+            <button class="index-button register-button">Submit</button>
+        </form>
+    </div>
+    <div class="log-in">
+        <form action="/users/login" method="post">
+
+            <h2 class="index-h2 log-in-h2">Log In</h2>
+
+            {% for message in get_flashed_messages(category_filter=['login']) %}
+            <p style="color:red"> {{message}} </p>
+            {% endfor %}
+            <h3><label for="email" name="email">Enter your email: </label></h3>
+            <input type="email" id="email" name="email" placeholder="Enter your email name here...">
+
+            <h3><label for="password" name="password">Enter your password: </label></h3>
+            <input type="password" id="password" name="password">
+
+            <button class="index-button login-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

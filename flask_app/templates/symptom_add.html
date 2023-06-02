@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_symptom_add.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Add a symptom</h1>
+    </nav>
+
+    <div class="first-form">
+        {% for message in get_flashed_messages(category_filter=['add_symptom']) %}
+            <p style="color:red"> {{message}} </p>
+        {% endfor %}
+        <form action="/symptom_tracker/create" class="symptom-container" method="POST">
+            <div class="symptom">
+                <h3><label for="date" name="date">Date: </label></h3>
+                <input type="date" name="date" id="date">
+            </div>
+
+            <div class="symptom">
+                <h3><label for="symptom_id" name="symptom_id">Symptom: </label></h3>
+                <select name="symptom_id" id="symptom_id">
+                    {% for symptom in all_symptoms %}
+                    <option value="{{ symptom.id }}">{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="symptom">
+                <h3><label for="severity" name="severity">Severity: </label></h3>
+                <select name="severity" id="severity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div class="symptom">
+                <h3><label for="description" name="description">Description: </label></h3>
+                <textarea name="description" id="description" cols="40" rows="10"></textarea>
+            </div>
+
+            <input type="hidden" name="user_id" value="{{ logged_user.id }}">
+            <div class="btn">
+                <button class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
